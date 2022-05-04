@@ -1,0 +1,21 @@
+Animation
+Running animation: mixamo "fast run"
+
+3D model
+Player 3D model: Standart assets "Ethan"
+
+BGM
+stage1 BGM: MusMus-BGM-146
+running BGM: MusMus-BGM-122
+
+SE
+効果音ラボ
+Move/Rotate: カーソル移動7
+switch operation: キャンセル1
+cancel select: キャンセル4
+select: 決定、ボタン押下19
+clear SE: スタジアムの歓声
+clear SE2: 歓声と拍手
+failure SE: 爆発1
+run: 決定、ボタン押下31
+reset: 決定、ボタン押下33
