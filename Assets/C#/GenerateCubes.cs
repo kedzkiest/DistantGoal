@@ -7,6 +7,8 @@ public class GenerateCubes : MonoBehaviour
     public GameObject cube;
     private List<GameObject> cubes = new List<GameObject>();
 
+    public int stageNum;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,12 +34,30 @@ public class GenerateCubes : MonoBehaviour
         for (int i = 0; i < rnd; i++)
         {
             GameObject tmp = Instantiate(cube);
-            tmp.transform.localScale =
-                new Vector3(Random.Range(0.3f, 1.5f), Random.Range(0.3f, 1.5f), Random.Range(0.3f, 1.5f));
+            if (stageNum == 1 || stageNum == 2)
+            {
+                tmp.transform.localScale =
+                    new Vector3(Random.Range(0.3f, 1.5f), Random.Range(0.3f, 1.5f), Random.Range(0.3f, 1.5f));
+            }
+            else if (stageNum == 3)
+            {
+                tmp.transform.localScale =
+                    new Vector3(Random.Range(0.8f, 3.0f), Random.Range(0.8f, 3.0f), Random.Range(0.8f, 8.0f));
+            }
+
             tmp.GetComponent<Rigidbody>().velocity = new Vector3(0, 0.1f, 0);
-            tmp.GetComponent<Renderer>().material.color = new Color(255, 255, 255);
+            tmp.GetComponent<Renderer>().material.color = Color.white;
             cubes.Add(tmp);
             tmp.transform.position = new Vector3(Random.Range(-4, 5), 4, Random.Range(-4, 5));
+        }
+    }
+
+    public void DestroyCube()
+    {
+        while (cubes.Count > 0)
+        {
+            Destroy(cubes[0]);
+            cubes.RemoveAt(0);
         }
     }
 }

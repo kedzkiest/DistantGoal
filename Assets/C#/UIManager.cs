@@ -23,6 +23,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject[] DisabledOnRunning = Array.Empty<GameObject>();
 
+    public GameObject nextButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,7 @@ public class UIManager : MonoBehaviour
             if (JudgeClear.clearFlag)
             {
                 successText.enabled = true;
+                nextButton.SetActive(true);
                 sePlayer.PlayClearSound();
             }
             else

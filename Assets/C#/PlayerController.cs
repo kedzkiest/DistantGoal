@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using UnityEditor.Animations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,8 +10,8 @@ public class PlayerController : MonoBehaviour
     public GameObject goal;
     public GameObject start;
     
-    public AnimatorController Idle_animController;
-    public AnimatorController Run_animController;
+    public RuntimeAnimatorController Idle_animController;
+    public RuntimeAnimatorController Run_animController;
 
     public Avatar Idle;
     public Avatar Run;
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public bool isRunning;
 
     private Vector3 initPos;
+
+    public float climbPower;
     
     // Start is called before the first frame update
     void Start()
@@ -50,6 +53,7 @@ public class PlayerController : MonoBehaviour
         if (isRunning && (!JudgeClear.clearFlag && !JudgeFailure.failureFlag))
         {
             transform.Translate(Vector3.forward * runningSpeed * Time.deltaTime);
+            Vector3 currentPosition = GetCurrentPosition();
         }
     }
 
@@ -71,5 +75,18 @@ public class PlayerController : MonoBehaviour
         anim.avatar = Idle;
         transform.position = initPos;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
+    Vector3 GetCurrentPosition()
+    {
+        return transform.position;
+    }
+
+    public void OnCollisionStay(Collision collision)
+    {
+        if (isRunning && (!JudgeClear.clearFlag && !JudgeFailure.failureFlag))
+        {
+            transform.position += new Vector3(0, climbPower, 0);
+        }
     }
 }

@@ -6,6 +6,8 @@ Player 3D model: Standart assets "Ethan"
 
 BGM
 stage1 BGM: MusMus-BGM-146
+stage2 BGM: MusMus-BGM-085
+stage3 BGM: MusMus-BGM-115
 running BGM: MusMus-BGM-122
 
 SE
@@ -19,4 +21,3 @@ clear SE2: 歓声と拍手
 failure SE: 爆発1
 run: 決定、ボタン押下31
 reset: 決定、ボタン押下33
-
