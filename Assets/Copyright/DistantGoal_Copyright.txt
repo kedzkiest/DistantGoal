@@ -21,3 +21,6 @@ clear SE2: 歓声と拍手
 failure SE: 爆発1
 run: 決定、ボタン押下31
 reset: 決定、ボタン押下33
+
+Japanese Font
+rounded-mplus-1c-bold
