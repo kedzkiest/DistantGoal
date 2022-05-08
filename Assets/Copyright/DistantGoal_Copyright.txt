@@ -2,7 +2,7 @@ Animation
 Running animation: mixamo "fast run"
 
 3D model
-Player 3D model: Standart assets "Ethan"
+Player 3D model: Standard assets "Ethan"
 
 BGM
 stage1 BGM: MusMus-BGM-146
